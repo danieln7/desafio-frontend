@@ -1,0 +1,557 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: teal;
+}
+
+section:not(.footer, .header) {
+  margin-bottom: 50px !important;
+}
+
+section:not(.header, .main, .texto-informativo, .footer) {
+  overflow: hidden;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section .vitrine, section .noticias, section .cloud-tags, section .mapa {
+  padding-top: 10px;
+  border-radius: 10px;
+  background-color: rgb(2, 109, 109);
+}
+
+section .mapa {
+  padding: 10px;
+}
+
+.header {
+  overflow: hidden;
+  height: 80px;
+  background-color: white;
+}
+
+.header .itens {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  height: inherit;
+}
+
+.header .logo {
+  top: 50%;
+  height: 46px;
+  margin: -23px 10px 10px 10px;
+  position: absolute;
+  left: 0;
+}
+
+.header .right {
+  top: 35%;
+  position: absolute;
+  right: 0;
+}
+
+.header .right a {
+  color: black;
+  text-align: center;
+  padding: 12px;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a:hover:not(.logo, .logo a) {
+  background-color: #477630;
+  color: white;
+}
+
+.header .right a.active {
+  background-color: #5e9c3f;
+  color: white;
+}
+
+.header a, .texto-informativo {
+  font-family: Verdana, Geneva, sans-serif;
+  font-variant: small-caps;
+}
+
+/** Posiciona verticalmente os itens do menu em resoluções menores */
+
+@media screen and (max-width: 650px) {
+  .header {
+    height: auto;
+  }
+  .header .logo {
+    position: relative;
+    top: 0;
+    margin: 10px;
+  }
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header .right {
+    position: relative;
+    float: none;
+  }
+}
+
+.banner .slideshow {
+  max-width: 100%;
+  height: 284px;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.banner .slides {
+  position: relative;
+  background-size: cover;
+}
+
+.banner .titulo-imagem {
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  left: 50%;
+  width: 800px;
+  margin-left: -400px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 32px;
+  letter-spacing: 0px;
+  word-spacing: 2px;
+  color: #ffffff;
+  font-weight: bolder;
+  text-decoration: none;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .banner .titulo-imagem {
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .banner .titulo-imagem {
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    font-size: 14px;
+  }
+}
+
+.banner .cta {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+}
+
+.cta-btn {
+  box-shadow: 0px 0px 0px 0px #3dc21b;
+  background-color: rgb(4, 65, 65);
+  border-radius: 30px;
+  border: 1px solid #b3b3b3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Verdana;
+  font-size: 20px;
+  padding: 12px 35px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
+
+.cta-btn:hover {
+  background-color: rgb(2, 29, 29);
+}
+
+/** Oculta os slides por padrão */
+
+.slides {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+/** Botões anterior e próximo */
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  width: auto;
+  margin-top: -40px;
+  padding: 16px;
+  color: #111c0c;
+  font-weight: bold;
+  font-size: 36px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+/** Posiciona os botões */
+
+.next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.prev:not(.banner .prev), .next:not(.banner .next) {
+  padding: 10px;
+}
+
+/** Adiciona cor ao passar o cursor por cima */
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+/** Pontos/indicadores dos slides */
+
+.dots-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/** Animação de transição dos slides */
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.vitrine .titulo, .noticias .titulo, .cloud-tags .titulo, .mapa .titulo {
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, sans-serif;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
+}
+
+.vitrine .slideshow, .noticias .slideshow {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.vitrine .slides, .noticias .slides {
+  text-align: center;
+}
+
+.mapa .container {
+  border-radius: 10px;
+  height: 400px;
+}
+
+.texto-informativo {
+  position: relative;
+  background-color: #5e9c3f;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+.texto-informativo .container {
+  position: absolute;
+  max-width: 1000px;
+  top: 50%;
+  margin-top: -25px;
+  left: 50%;
+  margin-left: -470px;
+}
+
+.texto-informativo .cta, .texto-informativo .texto {
+  display: inline-block;
+}
+
+.texto-informativo .cta a {
+  padding: 10px 20px;
+}
+
+.texto-informativo .texto {
+  margin-left: 25px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 650px) {
+  .texto-informativo {
+    height: 200px;
+  }
+}
+
+.cloud-tags {
+  text-align: center;
+  position: relative;
+  height: 200px;
+}
+
+.cloud-tags .container {
+  position: absolute;
+  height: 70%;
+  left: 50%;
+  margin-left: -326px;
+  margin-top: 30px;
+}
+
+.cloud-tags .row {
+  height: 40%;
+  margin: auto;
+}
+
+.cloud-tags a {
+  background-color: #044141;
+  border-radius: 25px;
+  padding: 15px;
+  color: white;
+}
+
+.cloud-tags a:hover {
+  background-color: rgb(2, 29, 29);
+}
+
+.footer {
+  overflow: hidden;
+  background-color: #111c0c;
+  padding: 15px;
+  text-align: center;
+}
+
+.footer .itens {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer .logo, .footer .menu {
+  display: inline-block;
+}
+
+.footer .logo, .footer .menu-esquerdo {
+  margin-right: 20px;
+}
+
+.footer .menu {
+  text-align: left;
+  width: 400px;
+}
+
+.footer .menu-esquerdo, .footer .menu-direito {
+  display: inline-block;
+}
+
+.footer, .footer a {
+  color: white;
+}
+
+.footer a {
+  margin-bottom: 10px;
+}
+
+.footer a:hover {
+  color: rgb(163, 196, 164);
+}
+
+@media screen and (max-width: 650px) {
+  .footer .logo, .footer .menu {
+    text-align: center;
+    display: block;
+  }
+  .footer .menu-esquerdo, .footer .menu-direito {
+    text-align: left;
+  }
+  .footer .logo {
+    margin: 0 0 15px;
+  }
+  .footer .itens {
+    margin: auto;
+  }
+}
+
+.footer .menu-esquerdo a, .footer .menu-direito a {
+  display: block;
+}
+
+.footer .titulo {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.anuncio *, .artigo * {
+  margin: auto;
+}
+
+.anuncio, .artigo {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #477630;
+  -webkit-box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.anuncio .tipo-imovel {
+  font-weight: bold;
+}
+
+.anuncio .local {
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.anuncio .imagem, .artigo .imagem {
+  overflow: hidden;
+  width: 280px;
+  border-radius: 10px;
+}
+
+.anuncio .imagem {
+  height: 198px;
+}
+
+.artigo .imagem {
+  height: 180px;
+  margin-bottom: 10px;
+}
+
+.anuncio .info {
+  width: 280px;
+  height: 80px;
+}
+
+.anuncio .quartos, .anuncio .vagas, .anuncio .metragem {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+}
+
+.anuncio .icone, .anuncio .qtd {
+  width: 85px;
+  height: 40px;
+  display: block;
+}
+
+.anuncio .tipo-imovel, .anuncio .local {
+  padding-top: 10px;
+}
+
+.anuncio .info {
+  font-weight: bold;
+  padding: 15px 0;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.anuncio .cta, .artigo .cta {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #044141;
+  border-radius: 10px;
+  width: 50%;
+  left: 50%;
+  margin-left: -75px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.anuncio .cta:hover, .artigo .cta:hover {
+  background-color: rgb(2, 29, 29);
+}
+
+.anuncio .cta a, .artigo .cta a {
+  color: white;
+}
+
+.artigo .artigo-texto {
+  text-align: left;
+  height: 40%;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.artigo .titulo-artigo {
+  margin-bottom: 15px;
+}
+
+.artigo .titulo-artigo a {
+  font-weight: bold;
+  color: black;
+}
+
+.artigo .titulo-artigo a:hover {
+  color: rgb(2, 29, 29);
+}

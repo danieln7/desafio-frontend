@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <title>Imobiliária Inforce</title>
+    <link rel="stylesheet" href="estilos/global.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/global.js"></script>
+    <script type="text/javascript" src="scripts/mapa.js"></script>
+    <script type="text/javascript" src="scripts/auxiliar.js"></script>
+    <script type="text/javascript" src="scripts/slides.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+
+    <section class="header">
+        <div class="itens">
+            <div class="logo">
+                <a href="#"><img src="assets/logo-topo.webp" alt="logo do topo"></a>
+            </div>
+            <div class="right">
+                <a class="active" href="#">Home</a>
+                <a href="#">Imóveis</a>
+                <a href="#">Serviços</a>
+                <a href="#">Fale Conosco</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="main">
+
+        <!-- Banner do topo -->
+
+        <section class="banner">
+
+            <div class="slideshow">
+
+                <div class="slides fade" s-index="1">
+                    <div class="titulo-imagem">
+                    </div>
+                    <div class="cta">
+                        <a class="cta-btn" href="#">Saiba Mais</a>
+                    </div>
+                </div>
+
+                <a class="prev" s-tipo="banner">&#10094;</a>
+                <a class="next" s-tipo="banner">&#10095;</a>
+
+            </div>
+
+            <div class="dots-container">
+                <span class="dot" s-tipo="banner" s-index="1"></span>
+                <span class="dot" s-tipo="banner" s-index="2"></span>
+            </div>
+
+        </section>
+
+        <!-- Vitrine -->
+
+        <section class="vitrine">
+
+            <div class="titulo">
+                Vitrine de Imóveis
+            </div>
+
+            <div class="slideshow">
+
+                <div class="slides fade" s-index="1">
+
+                    <div class="anuncio">
+
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel1.jpg"
+                                alt="imagem do anúncio">
+                        </div>
+                        <div class="tipo-imovel">
+                            Apartamento
+                        </div>
+                        <div class="local">
+                            Barra da Tijuca - RJ
+                        </div>
+                        <div class="info">
+                            <div class="quartos">
+                                <div class="icone">
+                                    <img src="assets/quartos-icone.png" title="Quartos" alt="ícone de quarto">
+                                </div>
+                                <div class="qtd">2</div>
+                            </div>
+                            <div class="vagas">
+                                <div class="icone">
+                                    <img src="assets/vagas-icone.png" title="Vagas" alt="ícone de vaga">
+                                </div>
+                                <div class="qtd">1</div>
+                            </div>
+                            <div class="metragem">
+                                <div class="icone">
+                                    <img src="assets/metragem-icone.png" title="Metragem" alt="ícone de metragem">
+                                </div>
+                                <div class="qtd">65 m²</div>
+                            </div>
+                        </div>
+                        <div class="cta"><a href="#">Veja mais</a></div>
+
+                    </div>
+
+                    <div class="anuncio">
+
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel2.jpg"
+                                alt="imagem do anúncio">
+                        </div>
+                        <div class="tipo-imovel">Apartamento</div>
+                        <div class="local">Leblon - RJ</div>
+                        <div class="info">
+                            <div class="quartos">
+                                <div class="icone">
+                                    <img src="assets/quartos-icone.png" title="Quartos" alt="ícone de quarto">
+                                </div>
+                                <div class="qtd">3</div>
+                            </div>
+                            <div class="vagas">
+                                <div class="icone">
+                                    <img src="assets/vagas-icone.png" title="Vagas" alt="ícone de vaga">
+                                </div>
+                                <div class="qtd">2</div>
+                            </div>
+                            <div class="metragem">
+                                <div class="icone">
+                                    <img src="assets/metragem-icone.png" title="Metragem" alt="ícone de metragem">
+                                </div>
+                                <div class="qtd">78 m²</div>
+                            </div>
+                        </div>
+                        <div class="cta"><a href="#">Veja mais</a></div>
+
+                    </div>
+
+                    <div class="anuncio">
+
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel3.jpg"
+                                alt="imagem do anúncio">
+                        </div>
+                        <div class="tipo-imovel">Apartamento</div>
+                        <div class="local">Recreio dos Bandeirantes - RJ</div>
+                        <div class="info">
+                            <div class="quartos">
+                                <div class="icone">
+                                    <img src="assets/quartos-icone.png" title="Quartos" alt="ícone de quarto">
+                                </div>
+                                <div class="qtd">3</div>
+                            </div>
+                            <div class="vagas">
+                                <div class="icone">
+                                    <img src="assets/vagas-icone.png" title="Vagas" alt="ícone de vaga">
+                                </div>
+                                <div class="qtd">2</div>
+                            </div>
+                            <div class="metragem">
+                                <div class="icone">
+                                    <img src="assets/metragem-icone.png" title="Metragem" alt="ícone de metragem">
+                                </div>
+                                <div class="qtd">85 m²</div>
+                            </div>
+                        </div>
+                        <div class="cta"><a href="#">Veja mais</a></div>
+
+                    </div>
+
+                </div>
+
+                <div class="slides fade" s-index="2">
+
+                    <div class="anuncio">
+
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel4.jpg"
+                                alt="imagem do anúncio">
+                        </div>
+                        <div class="tipo-imovel">Apartamento</div>
+                        <div class="local">Urca - RJ</div>
+                        <div class="info">
+                            <div class="quartos">
+                                <div class="icone">
+                                    <img src="assets/quartos-icone.png" title="Quartos" alt="ícone de quarto">
+                                </div>
+                                <div class="qtd">2</div>
+                            </div>
+                            <div class="vagas">
+                                <div class="icone">
+                                    <img src="assets/vagas-icone.png" title="Vagas" alt="ícone de vaga">
+                                </div>
+                                <div class="qtd">1</div>
+                            </div>
+                            <div class="metragem">
+                                <div class="icone">
+                                    <img src="assets/metragem-icone.png" title="Metragem" alt="ícone de metragem">
+                                </div>
+                                <div class="qtd">60 m²</div>
+                            </div>
+                        </div>
+                        <div class="cta"><a href="#">Veja mais</a></div>
+
+                    </div>
+
+                    <div class="anuncio">
+
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel5.jpg"
+                                alt="imagem do anúncio">
+                        </div>
+                        <div class="tipo-imovel">Apartamento</div>
+                        <div class="local">Barra da Tijuca - RJ</div>
+                        <div class="info">
+                            <div class="quartos">
+                                <div class="icone">
+                                    <img src="assets/quartos-icone.png" title="Quartos" alt="ícone de quarto">
+                                </div>
+                                <div class="qtd">3</div>
+                            </div>
+                            <div class="vagas">
+                                <div class="icone">
+                                    <img src="assets/vagas-icone.png" title="Vagas" alt="ícone de vaga">
+                                </div>
+                                <div class="qtd">1</div>
+                            </div>
+                            <div class="metragem">
+                                <div class="icone">
+                                    <img src="assets/metragem-icone.png" title="Metragem" alt="ícone de metragem">
+                                </div>
+                                <div class="qtd">74 m²</div>
+                            </div>
+                        </div>
+                        <div class="cta"><a href="#">Veja mais</a></div>
+
+                    </div>
+
+                    <div class="anuncio">
+
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/vitrine/imovel6.jpg"
+                                alt="imagem do anúncio">
+                        </div>
+                        <div class="tipo-imovel">Apartamento</div>
+                        <div class="local">Copacabana - RJ</div>
+                        <div class="info">
+                            <div class="quartos">
+                                <div class="icone">
+                                    <img src="assets/quartos-icone.png" title="Quartos" alt="ícone de quarto">
+                                </div>
+                                <div class="qtd">2</div>
+                            </div>
+                            <div class="vagas">
+                                <div class="icone">
+                                    <img src="assets/vagas-icone.png" title="Vagas" alt="ícone de vaga">
+                                </div>
+                                <div class="qtd">1</div>
+                            </div>
+                            <div class="metragem">
+                                <div class="icone">
+                                    <img src="assets/metragem-icone.png" title="Metragem" alt="ícone de metragem">
+                                </div>
+                                <div class="qtd">63 m²</div>
+                            </div>
+                        </div>
+                        <div class="cta"><a href="#">Veja mais</a></div>
+
+                    </div>
+
+                </div>
+
+                <!-- Botões anterior e próximo da vitrine -->
+                <a class="prev" s-tipo="vitrine">&#10094;</a>
+                <a class="next" s-tipo="vitrine">&#10095;</a>
+
+            </div>
+
+            <div class="dots-container">
+                <span class="dot" s-tipo="vitrine" s-index="1"></span>
+                <span class="dot" s-tipo="vitrine" s-index="2"></span>
+            </div>
+
+        </section>
+
+        <!-- Texto informativo -->
+
+        <section class="texto-informativo">
+            <div class="container">
+                <div class="cta"><a href="#" class="cta-btn">Anuncie</a></div>
+                <div class="texto">Quando o assunto é imóvel, a Inforce tem a solução.</div>
+            </div>
+        </section>
+
+        <!-- Notícias -->
+
+        <section class="noticias">
+
+            <div class="titulo">
+                Últimas Notícias
+            </div>
+
+            <div class="slideshow">
+
+                <div class="slides fade" s-index="1">
+
+                    <div class="artigo">
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia1.jpg"
+                                alt="Imagem da notícia">
+                        </div>
+                        <div class="artigo-texto">
+                            <div class="titulo-artigo">
+                                <a href="#">Preço dos imóveis residenciais recua em setembro</a>
+                            </div>
+                            <div class="sumario">
+                                No acumulado do ano e em 12 meses, os valores seguem com avanço inferior à inflação.
+                            </div>
+                        </div>
+                        <div class="cta">
+                            <a href="#">Leia mais</a>
+                        </div>
+                    </div>
+
+                    <div class="artigo">
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia2.jpg"
+                                alt="Imagem da notícia">
+                        </div>
+                        <div class="artigo-texto">
+                            <div class="titulo-artigo">
+                                <a href="#">20% dos novos financiamentos de imóveis da Caixa já são pelo IPCA</a>
+                            </div>
+                            <div class="sumario">
+                                Lançada há um mês, modalidade é opcional e oferece juros de até 4,95% ao ano acrescidos
+                                da
+                                inflação no período.
+                            </div>
+                        </div>
+                        <div class="cta">
+                            <a href="#">Leia mais</a>
+                        </div>
+                    </div>
+
+                    <div class="artigo">
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia3.jpg"
+                                alt="Imagem da notícia">
+                        </div>
+                        <div class="artigo-texto">
+                            <div class="titulo-artigo">
+                                <a href="#">Compra e venda de imóveis têm alta de quase 6%</a>
+                            </div>
+                            <div class="sumario">
+                                Entre julho de 2018 e junho de 2019, foram comprados e vendidos cerca de 613 mil
+                                imóveis no estado.
+                            </div>
+                        </div>
+                        <div class="cta">
+                            <a href="#">Leia mais</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slides fade" s-index="2">
+
+                    <div class="artigo">
+                        <div class="imagem">
+                            <img src="https://labs.inforcedata.com.br/desafio-frontend/noticias/noticia4.jpg"
+                                alt="Imagem da notícia">
+                        </div>
+                        <div class="artigo-texto">
+                            <div class="titulo-artigo">
+                                <a href="#">Risco de bolha imobiliária aumenta na zona do euro</a>
+                            </div>
+                            <div class="sumario">
+                                Pela primeira vez em quatro anos, Londres não foi classificada como uma cidade com
+                                imóveis
+                                perigosamente sobrevalorizado.
+                            </div>
+                        </div>
+                        <div class="cta">
+                            <a href="#">Leia mais</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botões anterior e próximo das notícias -->
+                <a class="prev" s-tipo="noticias">&#10094;</a>
+                <a class="next" s-tipo="noticias">&#10095;</a>
+
+            </div>
+
+            <div class="dots-container">
+                <span class="dot" s-tipo="noticias" s-index="1"></span>
+                <span class="dot" s-tipo="noticias" s-index="2"></span>
+            </div>
+
+        </section>
+
+        <!-- Nuvem de tags -->
+
+        <section class="cloud-tags">
+            <div class="titulo">Mais Acessadas</div>
+            <div class="container">
+                <div class="row">
+                    <a href="#">apartamentos na barra</a>
+                    <a href="#">casas no recreio</a>
+                    <a href="#">casa com 3 quartos</a>
+                    <a href="#">barra da tijuca</a>
+                </div>
+                <div class="row">
+                    <a href="#">apartamento com 2 quartos</a>
+                    <a href="#">casa na urca</a>
+                    <a href="#">humaita</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa -->
+
+        <section class="mapa">
+            <div class="titulo">Onde Estamos</div>
+            <div class="container" id="mapa">
+                <!-- O mapa será carregado aqui -->
+            </div>
+        </section>
+
+    </section>
+
+    <!-- Rodapé -->
+
+    <section class="footer">
+        <div class="itens">
+            <div class="logo">
+                <a href="#"><img src="assets/logo-footer.png" alt="logo do rodapé"></a>
+            </div>
+            <div class="menu">
+                <div class="menu-esquerdo">
+                    <div class="titulo">Encontre imóveis</div>
+                    <a href="#">Venda</a>
+                    <a href="#">Aluguel</a>
+                    <a href="#">Lançamentos</a>
+                </div>
+                <div class="menu-direito">
+                    <div class="titulo">Institucional</div>
+                    <a href="#">Quem somos</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Trabalhe conosco</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+<!-- Script que carrega o mapa do Google -->
+
+<script async src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
+
+</html>
