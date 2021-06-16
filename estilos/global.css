@@ -12,40 +12,20 @@ body {
   background-color: teal;
 }
 
-section:not(.footer, .header) {
-  margin-bottom: 50px !important;
-}
-
-section:not(.header, .main, .texto-informativo, .footer) {
-  overflow: hidden;
-  max-width: 1000px;
-  margin: auto;
-}
-
-section .vitrine, section .noticias, section .cloud-tags, section .mapa {
-  padding-top: 10px;
-  border-radius: 10px;
-  background-color: rgb(2, 109, 109);
-}
-
-section .mapa {
-  padding: 10px;
-}
-
-.header {
+header {
   overflow: hidden;
   height: 80px;
   background-color: white;
 }
 
-.header .itens {
+header .container {
   position: relative;
   max-width: 1000px;
   margin: auto;
   height: inherit;
 }
 
-.header .logo {
+header .logo {
   top: 50%;
   height: 46px;
   margin: -23px 10px 10px 10px;
@@ -53,13 +33,13 @@ section .mapa {
   left: 0;
 }
 
-.header .right {
+nav {
   top: 35%;
   position: absolute;
   right: 0;
 }
 
-.header .right a {
+nav a {
   color: black;
   text-align: center;
   padding: 12px;
@@ -68,108 +48,125 @@ section .mapa {
   border-radius: 4px;
 }
 
-.header a:hover:not(.logo, .logo a) {
-  background-color: #477630;
+nav a:hover {
+  background-color: #446e2e;
   color: white;
 }
 
-.header .right a.active {
+nav a.active {
   background-color: #5e9c3f;
   color: white;
 }
 
-.header a, .texto-informativo {
+nav a, .texto-informativo {
   font-family: Verdana, Geneva, sans-serif;
   font-variant: small-caps;
 }
 
 /** Posiciona verticalmente os itens do menu em resoluções menores */
 
-@media screen and (max-width: 650px) {
-  .header {
+@media screen and (max-width: 680px) {
+  header {
     height: auto;
   }
-  .header .logo {
+  header .logo {
     position: relative;
     top: 0;
     margin: 10px;
   }
-  .header a {
+  nav a {
     float: none;
     display: block;
     text-align: left;
+    border-radius: 0;
   }
-  .header .right {
+  nav {
     position: relative;
     float: none;
   }
 }
 
-.banner .slideshow {
-  max-width: 100%;
-  height: 284px;
-  position: relative;
+section, .banner, .texto-informativo {
+  /** Regra !important para não utilizar margin:auto */
+  margin-bottom: 30px !important;
+}
+
+.vitrine, .noticias, .cloud-tags, .mapa {
+  max-width: 1000px;
   margin: auto;
+  position: relative;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.vitrine, .noticias {
+  padding: 10px 0;
+}
+
+.mapa, .cloud-tags {
+  padding: 10px;
+}
+
+.banner {
+  max-width: 100%;
+  position: relative;
   text-align: center;
+  height: 400px;
+}
+
+.banner .slideshow {
+  height: 100%;
 }
 
 .banner .slides {
   position: relative;
-  background-size: cover;
+  height: 100%;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .banner .titulo-imagem {
   position: absolute;
   top: 50%;
-  margin-top: -30px;
   left: 50%;
-  width: 800px;
-  margin-left: -400px;
+  transform: translate(-50%, -50%);
+  width: 100%;
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: 0px;
   word-spacing: 2px;
-  color: #ffffff;
+  color: white;
   font-weight: bolder;
   text-decoration: none;
   font-variant: small-caps;
   text-transform: capitalize;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 15px;
-  padding: 10px;
-}
-
-@media screen and (max-width: 900px) {
-  .banner .titulo-imagem {
-    width: 400px;
-    left: 50%;
-    margin-left: -200px;
-    font-size: 22px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .banner .titulo-imagem {
-    width: 200px;
-    left: 50%;
-    margin-left: -100px;
-    font-size: 14px;
-  }
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
 }
 
 .banner .cta {
   position: absolute;
-  bottom: 20px;
+  bottom: 15%;
   left: 50%;
   width: 200px;
   margin-left: -100px;
 }
 
+.banner .dots-container {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  margin-left: -19px;
+}
+
 .cta-btn {
-  box-shadow: 0px 0px 0px 0px #3dc21b;
   background-color: rgb(4, 65, 65);
   border-radius: 30px;
-  border: 1px solid #b3b3b3;
+  border: 2px solid #b3b3b3;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
@@ -177,7 +174,6 @@ section .mapa {
   font-size: 20px;
   padding: 12px 35px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
   font-variant: small-caps;
   text-transform: capitalize;
 }
@@ -199,38 +195,39 @@ section .mapa {
 .prev, .next {
   position: absolute;
   top: 50%;
+  margin-top: -40px;
   cursor: pointer;
   width: auto;
-  margin-top: -40px;
-  padding: 16px;
-  color: #111c0c;
   font-weight: bold;
   font-size: 36px;
   transition: 0.6s ease;
   user-select: none;
+  color: white;
+  padding: 10px;
 }
 
 /** Posiciona os botões */
 
 .next {
   right: 0;
-  border-radius: 10px 0 0 10px;
 }
 
 .prev {
   left: 0;
-  border-radius: 0 10px 10px 0;
 }
 
-.prev:not(.banner .prev), .next:not(.banner .next) {
-  padding: 10px;
+.banner .prev, .banner .next {
+  margin-top: -35px;
 }
 
-/** Adiciona cor ao passar o cursor por cima */
+/** Adiciona efeito ao passar o cursor por cima */
 
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+.next:hover {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0, 1));
+}
+
+.prev:hover {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgb(0, 0, 0, 1));
 }
 
 /** Pontos/indicadores dos slides */
@@ -282,23 +279,16 @@ section .mapa {
   }
 }
 
-.vitrine .titulo, .noticias .titulo, .cloud-tags .titulo, .mapa .titulo {
+h2 {
+  color: white;
   max-width: 1000px;
   margin: auto;
   margin-bottom: 15px;
   text-align: center;
   font-size: 25px;
-  font-weight: bold;
   font-family: Verdana, Geneva, sans-serif;
   font-variant: small-caps;
   text-transform: capitalize;
-  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.5);
-}
-
-.vitrine .slideshow, .noticias .slideshow {
-  max-width: 100%;
-  position: relative;
-  margin: auto;
 }
 
 .vitrine .slides, .noticias .slides {
@@ -310,25 +300,25 @@ section .mapa {
   height: 400px;
 }
 
+.mapa .local {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .texto-informativo {
   position: relative;
   background-color: #5e9c3f;
   width: 100%;
-  height: 100px;
+  height: 100%;
   text-align: center;
-}
-
-.texto-informativo .container {
-  position: absolute;
-  max-width: 1000px;
-  top: 50%;
-  margin-top: -25px;
-  left: 50%;
-  margin-left: -470px;
+  padding: 20px;
 }
 
 .texto-informativo .cta, .texto-informativo .texto {
   display: inline-block;
+  margin: 10px;
 }
 
 .texto-informativo .cta a {
@@ -336,110 +326,75 @@ section .mapa {
 }
 
 .texto-informativo .texto {
-  margin-left: 25px;
   font-size: 26px;
   font-weight: bold;
 }
 
-@media screen and (max-width: 650px) {
-  .texto-informativo {
-    height: 200px;
-  }
-}
-
-.cloud-tags {
-  text-align: center;
-  position: relative;
-  height: 200px;
-}
-
 .cloud-tags .container {
-  position: absolute;
-  height: 70%;
-  left: 50%;
-  margin-left: -326px;
-  margin-top: 30px;
-}
-
-.cloud-tags .row {
-  height: 40%;
-  margin: auto;
+  text-align: center;
 }
 
 .cloud-tags a {
-  background-color: #044141;
-  border-radius: 25px;
   padding: 15px;
   color: white;
 }
 
-.cloud-tags a:hover {
+.cloud-tags .tag:hover {
   background-color: rgb(2, 29, 29);
 }
 
-.footer {
+.cloud-tags .tag {
+  background-color: #044141;
+  border-radius: 25px;
+  padding: 15px;
+  display: inline-block;
+  margin: 2px;
+}
+
+footer {
   overflow: hidden;
   background-color: #111c0c;
   padding: 15px;
   text-align: center;
 }
 
-.footer .itens {
-  position: relative;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.footer .logo, .footer .menu {
-  display: inline-block;
-}
-
-.footer .logo, .footer .menu-esquerdo {
+footer .logo {
   margin-right: 20px;
 }
 
-.footer .menu {
-  text-align: left;
-  width: 400px;
-}
-
-.footer .menu-esquerdo, .footer .menu-direito {
+footer .logo, footer .menu {
   display: inline-block;
 }
 
-.footer, .footer a {
+footer .menu-esquerdo, footer .menu-direito {
+  margin: 5px;
+}
+
+footer .menu {
+  text-align: left;
+}
+
+footer .menu-esquerdo, footer .menu-direito {
+  display: inline-block;
+}
+
+footer, footer a {
   color: white;
 }
 
-.footer a {
+footer a {
   margin-bottom: 10px;
 }
 
-.footer a:hover {
+footer a:hover {
   color: rgb(163, 196, 164);
 }
 
-@media screen and (max-width: 650px) {
-  .footer .logo, .footer .menu {
-    text-align: center;
-    display: block;
-  }
-  .footer .menu-esquerdo, .footer .menu-direito {
-    text-align: left;
-  }
-  .footer .logo {
-    margin: 0 0 15px;
-  }
-  .footer .itens {
-    margin: auto;
-  }
-}
-
-.footer .menu-esquerdo a, .footer .menu-direito a {
+footer .menu-esquerdo a, footer .menu-direito a {
   display: block;
 }
 
-.footer .titulo {
+footer .titulo {
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -449,6 +404,7 @@ section .mapa {
 }
 
 .anuncio, .artigo {
+  margin: 0 2px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -472,17 +428,17 @@ section .mapa {
   margin-bottom: 10px;
 }
 
-.anuncio .imagem, .artigo .imagem {
+.anuncio .capa, .artigo .capa {
   overflow: hidden;
   width: 280px;
   border-radius: 10px;
 }
 
-.anuncio .imagem {
+.anuncio .capa {
   height: 198px;
 }
 
-.artigo .imagem {
+.artigo .capa {
   height: 180px;
   margin-bottom: 10px;
 }
@@ -544,7 +500,7 @@ section .mapa {
 }
 
 .artigo .titulo-artigo {
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 .artigo .titulo-artigo a {
