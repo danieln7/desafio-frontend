@@ -13,4 +13,4 @@ HTML + CSS + Javascript/jQuery
 
 **Visualização:**
 
-Para visualizar o projeto basta abrir o arquivo index.html.
+Para visualizar o projeto basta abrir o arquivo index.html ou acessar https://dhneves.000webhostapp.com/desafio-inforce/
